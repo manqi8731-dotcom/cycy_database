@@ -156,7 +156,7 @@ function updateModelingContent(item, idx) {
         const modelUrl = GITHUB_MODEL_BASE + modelName;
         contentArea.innerHTML += `
             <model-viewer src="${modelUrl}" camera-controls auto-rotate shadow-intensity="1" ar></model-viewer>
-            <p style="margin-top:1rem; color:#666;">提示：左键旋转，右键平移，滚轮缩放。</p>
+            <p style="margin-top:1rem; color:#666;">提示：左键长按进行旋转，滚轮缩放。</p>
         `;
     } 
     // 2. 特殊处理：02 PDF 页面（上方显示 04 的图，下方下载 02 的 PDF）
