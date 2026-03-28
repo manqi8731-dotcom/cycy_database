@@ -187,7 +187,7 @@ function updateModelingContent(item, idx) {
                     </div>
                     <div class="img-name" style="padding:10px; font-weight:bold; border-bottom:1px solid #eee;">${displayName}</div>
                     <div class="actions" style="padding:10px;">
-                        <a href="${pdfUrl}" download="${pdfFileName}" target="_blank" style="display:block; width:100%; text-align:center; background-color:#B87C4F; color:white; text-decoration:none; padding:8px 0; border-radius:4px;">下载 PDF 档</a>
+                        <a href="${pdfUrl}" download="${pdfFileName}" target="_blank" style="display:block; width:100%; text-align:center; background-color:#B87C4F; color:white; text-decoration:none; padding:8px 0; border-radius:4px;">下载 PDF</a>
                     </div>
                 </div>`;
         });
