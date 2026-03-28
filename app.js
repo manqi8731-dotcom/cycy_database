@@ -83,7 +83,7 @@ function generateGalleryHtml(itemObj, isDownloadOnly = false) {
         html += `
             <input type="text" value="${fileName.split('.')[0]}" placeholder="图片名称">
             <div class="actions">
-                ${fileExt !== 'pdf' ? `<a href="${fullUrl}" target="_blank">在线预览</a>` : ''}
+                ${fileExt !== 'pdf' ? <a href="javascript:void(0)" onclick="openPreview('${fullUrl}')">在线预览</a> : ''}
                 <a href="${fullUrl}" download="${fileName}" target="_blank">下载</a>
             </div>
         </div>`;
@@ -260,3 +260,25 @@ function renderDocuments() {
 
 // 启动应用
 document.addEventListener('DOMContentLoaded', init);
+
+// --- 新增：图片弹窗预览控制函数 ---
+function openPreview(url) {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    modalImg.src = url;
+    modal.classList.add('active');
+}
+
+function closePreview() {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    modal.classList.remove('active');
+    // 延迟清空 src，等待动画结束
+    setTimeout(() => {
+        modalImg.src = "";
+    }, 300);
+}
+
+// 挂载到全局，供 onclick 调用
+window.openPreview = openPreview;
+window.closePreview = closePreview;
